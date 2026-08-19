@@ -13,7 +13,7 @@ let noteTimer = null;
 function parseTerms(raw) {
   const seen = new Set();
   const terms = [];
-  for (const line of raw.split("\n")) {
+  for (const line of raw.split(/[\n,]+/)) {
     const term = line.trim().slice(0, MAX_TERM_LENGTH);
     if (!term) continue;
     const key = term.toLowerCase();
