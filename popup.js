@@ -1,4 +1,4 @@
-const DONATE_URL = "https://buymeacoffee.com/innocentump";
+const DONATE_URL = "https://buymeacoffee.com/gov.transparency.sim";
 
 const FINEPRINT = [
   "No documents required redaction on this page. Suspicious.",

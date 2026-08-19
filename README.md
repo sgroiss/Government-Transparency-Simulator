@@ -57,4 +57,4 @@ own browser account (`storage.sync`); counters stay on your machine. See
 
 ## Support
 
-If this made you laugh, [buy me a beer](https://buymeacoffee.com/innocentump). 🍺
+If this made you laugh, [buy me a beer](https://buymeacoffee.com/gov.transparency.sim). 🍺
