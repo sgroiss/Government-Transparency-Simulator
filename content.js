@@ -35,11 +35,21 @@ function escapeRegex(source) {
 // "Trump's") instead of leaking the bare term with a stray "s" next to it.
 // The trailing-letter boundary check still runs after that suffix, so
 // unrelated words sharing the prefix ("Trumpet") are untouched.
+//
+// A term directly followed by a hyphen ("Trump-Administration", "Trump-Ära")
+// swallows just the hyphen ("Trump-" is redacted, "Administration" stays
+// visible) — a hyphen right after a term is never a coincidental substring
+// hit the way a bare letter is, so no trailing-letter check is needed there.
 function buildRegex(terms) {
   const cleaned = terms.map((term) => term.trim()).filter(Boolean);
   if (!cleaned.length) return null;
-  const pattern = cleaned.map((term) => `${escapeRegex(term)}(?:['’]s|s)?`).join("|");
-  return new RegExp(`(?<![\\p{L}\\p{N}])(?:${pattern})(?![\\p{L}\\p{N}])`, "giu");
+  const pattern = cleaned
+    .map((term) => {
+      const escaped = escapeRegex(term);
+      return `${escaped}-|${escaped}(?:['’]s|s)?(?![\\p{L}\\p{N}])`;
+    })
+    .join("|");
+  return new RegExp(`(?<![\\p{L}\\p{N}])(?:${pattern})`, "giu");
 }
 
 function clearanceLine() {
