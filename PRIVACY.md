@@ -15,4 +15,4 @@ Ironic, given the theme — but true.
   redactions. Nothing it reads ever leaves your browser.
 
 Questions: open an issue at
-https://github.com/sgroiss/Goverment-Transparency
+https://github.com/sgroiss/Government-Transparency-Simulator
