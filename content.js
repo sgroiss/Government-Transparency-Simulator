@@ -29,10 +29,16 @@ function escapeRegex(source) {
 
 // Unicode lookarounds instead of \b: \b is ASCII-only, so umlauts and terms
 // starting with a non-ASCII letter would never match.
+//
+// Each term also swallows an optional trailing "s" or "'s"/"’s" as part of
+// the match, so genitive/possessive forms get redacted whole ("Trumps",
+// "Trump's") instead of leaking the bare term with a stray "s" next to it.
+// The trailing-letter boundary check still runs after that suffix, so
+// unrelated words sharing the prefix ("Trumpet") are untouched.
 function buildRegex(terms) {
   const cleaned = terms.map((term) => term.trim()).filter(Boolean);
   if (!cleaned.length) return null;
-  const pattern = cleaned.map(escapeRegex).join("|");
+  const pattern = cleaned.map((term) => `${escapeRegex(term)}(?:['’]s|s)?`).join("|");
   return new RegExp(`(?<![\\p{L}\\p{N}])(?:${pattern})(?![\\p{L}\\p{N}])`, "giu");
 }
 
