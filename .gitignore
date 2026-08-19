@@ -2,3 +2,5 @@
 *.zip
 dist/
 node_modules/
+STORE_LISTING.md
+PROJECT-STATUS.md
