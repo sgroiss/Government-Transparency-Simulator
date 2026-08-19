@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Redactor</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="stamp">
+    <div class="stamp-title">Government Transparency Simulator</div>
+    <div class="stamp-sub">Office of Selective Disclosure</div>
+  </header>
+
+  <section class="status" id="status-row">
+    <span class="dot" id="status-dot"></span>
+    <span class="status-text" id="status-text">Active</span>
+    <label class="switch">
+      <input type="checkbox" id="toggle" checked>
+      <span class="slider"></span>
+    </label>
+  </section>
+
+  <section class="stats">
+    <div class="stat">
+      <div class="stat-value" id="page-count">0</div>
+      <div class="stat-label">Documents redacted<br>on this page</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" id="lifetime-count">0</div>
+      <div class="stat-label">Words withheld<br>from the public</div>
+    </div>
+  </section>
+
+  <p class="fineprint" id="fineprint">Some materials have been withheld in the public interest.</p>
+
+  <nav class="actions">
+    <button class="btn ghost" id="options-btn">Edit classified terms</button>
+    <a class="btn primary" id="donate-btn" href="#" target="_blank" rel="noopener noreferrer">Buy me a beer 🍺</a>
+  </nav>
+
+  <footer class="foot">Satire. Nothing is actually classified. Probably.</footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

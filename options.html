@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Redactor — Classified Terms Registry</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main class="sheet">
+    <header class="stamp">
+      <div class="stamp-title">Classified Terms Registry</div>
+      <div class="stamp-sub">Form GTS-042 · Rev. 2 · Approved for internal circulation</div>
+    </header>
+
+    <section class="form">
+      <label for="terms">Terms designated for redaction <span class="hint">(one per line)</span></label>
+      <textarea id="terms" rows="10" spellcheck="false" placeholder="Trump&#10;Epstein"></textarea>
+
+      <div class="row">
+        <button class="btn primary" id="save-btn">File amendment</button>
+        <button class="btn ghost" id="reset-btn">Restore official list</button>
+        <span class="saved" id="saved-note" hidden>Amendment filed. All open documents re-reviewed.</span>
+      </div>
+    </section>
+
+    <p class="fineprint">
+      Amendments take effect immediately. Open pages are reloaded for re-review.
+      The registry is synced across your browsers. No data leaves your machine —
+      this agency lacks the budget for surveillance.
+    </p>
+  </main>
+
+  <script src="defaults.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
