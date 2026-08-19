@@ -10,6 +10,8 @@ the public.
 
 **This is satire.** Nothing is actually classified. Probably.
 
+If this made you laugh, [buy me a beer](https://buymeacoffee.com/gov.transparency.sim). 🍺
+
 ## Features
 
 - Blacks out configured terms on every page, including dynamically loaded content
@@ -54,7 +56,3 @@ swapped in as `manifest.json` only inside the Firefox zip.
 No data is collected, transmitted, or sold. Your term list syncs through your
 own browser account (`storage.sync`); counters stay on your machine. See
 [PRIVACY.md](PRIVACY.md). This agency lacks the budget for surveillance.
-
-## Support
-
-If this made you laugh, [buy me a beer](https://buymeacoffee.com/gov.transparency.sim). 🍺
